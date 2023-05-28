@@ -1,0 +1,83 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
+
+    .jumbotron {
+      background-image: url("/imgs/capaboloderolosjc.jpg");
+      background-size: 100%;
+      border: #000000 solid 1.5px;
+    }
+
+    .col-md-6 {
+      padding-bottom: 20px;
+    }
+
+    .my-custom-img {
+      width: 15%;
+    }
+
+    h1,
+    h3,
+    h6 {
+      text-shadow: 1px 1px 0 #000000,
+        -1px 1px 0 #000000,
+        1px -1px 0 #000000,
+        -1px -1px 0 #000000;
+    }
+
+    h6 {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      font-size: 13pt;
+    }
+
+    .card-img-top {
+      width: 25%;
+      display: block;
+      margin: auto;
+      padding-top: 20px;
+
+    }
+
+    .card {
+      background-color: white;
+      border: #000000 solid 1.5px;
+      height: 95%;
+    }
+
+    body {
+      background-image: radial-gradient(circle at 50% 50%, #fde780 0, #edce76 25%, #d8b46c 50%, #c19b62 75%, #ac865a 100%);
+
+    }
+
+    h5 {
+      text-align: center;
+      font-size: 12pt;
+    }
+
+    .footer .footer-icons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer .footer-icons a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      background-color: #33383b;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+      margin-bottom: 5px;
+      transition: 0.3s;
+
+    }
+
+    .footer .footer-icons a:hover {
+      background-color: #2fcacf;
+    }
+
+    
