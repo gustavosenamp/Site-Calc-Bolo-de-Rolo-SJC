@@ -194,7 +194,7 @@
 
     quantidadeformas = quantidade * fator;
     programacao = $('#programadia').val();
-    programacao += `QUANTIDADE ITEMS:${quantidade} ${peso}G SABOR: ${sabor} FORMAS: ${tipoForma}  QUANTIDADE: ${quantidadeformas.toFixed(2)} \n`;
+    programacao += `QUANTIDADE ITEMS:${quantidade}\nPESO: ${peso}G\nSABOR: ${sabor}\nFORMAS: ${tipoForma}\nQUANTIDADE DE FORMAS: ${quantidadeformas.toFixed(2)} \n ----------------//------------------`;
     
     $('#programadia').val(programacao);
 
@@ -253,6 +253,12 @@
       formaSelect.disabled = true;
     }else if (selectedPeso === "650") {
       formaSelect.value = "FP";
+      formaSelect.disabled = true;
+    }else if (selectedPeso === "500") {
+      formaSelect.value = "FG";
+      formaSelect.disabled = true;
+    }else if (selectedPeso === "350") {
+      formaSelect.value = "FG";
       formaSelect.disabled = true;
     }else{
       formaSelect.disabled = false;
