@@ -97,6 +97,7 @@
             <option value="500">500g</option>
             <option value="650">650g</option>
             <option value="1000">1000g</option>
+            <option value="1500">1500g</option>
             <option value="2500">2500g</option>
             <option value="3000">3000g</option>
           </select>
@@ -202,6 +203,21 @@
   function fatorForma(peso){
     var fator = 0.0;
     switch (peso) {
+      case "3000":
+        fator = 18.0;
+        break;
+      case "2500":
+        fator = 24.0;
+        break;
+      case "1500":
+        fator = 22.0;
+        break;
+      case "1000":
+        fator = 14.0;
+        break;
+      case "650":
+        fator = 7.0;
+        break;
       case "500":
         fator = 2.0;
         break;
@@ -217,6 +233,33 @@
     }
     return fator;
   }
+
+  var pesoSelect = document.getElementById("peso");
+  var formaSelect = document.getElementById("tipoForma");
+
+  pesoSelect.addEventListener("change", function() {
+    var selectedPeso = pesoSelect.value;
+    if (selectedPeso === "3000") {
+      formaSelect.value = "FR27";
+      formaSelect.disabled = true;
+    } else if (selectedPeso === "2500") {
+      formaSelect.value = "FR27";
+      formaSelect.disabled = true;
+    } else if (selectedPeso === "1500") {
+      formaSelect.value = "FR23";
+      formaSelect.disabled = true;
+    } else if (selectedPeso === "1000") {
+      formaSelect.value = "FR23";
+      formaSelect.disabled = true;
+    }else if (selectedPeso === "650") {
+      formaSelect.value = "FP";
+      formaSelect.disabled = true;
+    }else{
+      formaSelect.disabled = false;
+    }
+  });
+
+ 
 </script>
 
 </html>
