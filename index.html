@@ -34,8 +34,10 @@
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
-  <script src="jquery-3.7.0.min.js"></script>
+ 
 </head>
+
+<script src="jquery-3.7.0.min.js"></script>
 
 <body>
   <main role="main">
@@ -136,7 +138,7 @@
         <div class="col-md-12 text-rigth">
           <a href="#" id="adidionar" class="btn btn-primary" onclick="funcao_adicionar()"><i class="fa fa-calculator"></i> calcular</a>
           <a href="#" id="remover" class="btn btn-danger" onclick="limpar()"><i class="fa fa-trash"></i> limpar</a>
-          <a href="#" id="imprimir" class="btn btn-warning" onclick="imprimir()"><i class="fa fa-print"></i> imprimir</a>
+          <a id="imprimir" class="btn btn-warning" onclick="imprimir()"><i class="fa fa-print"></i> imprimir</a>
         </div>
       </div>
       <div class="row"> 
@@ -171,17 +173,23 @@
     </p>
   </footer>
 </body>
-<script  type="text/javascript">
+<script type="text/javascript">
   function limpar(){
     $('#programadia').val('');
   }
+
   function imprimir(){
     var conteudo = $('#programadia').val();
-    tela_impressao = window.open('about:blank');
-    tela_impressao.document.write(conteudo);
-    tela_impressao.window.print();
-    tela_impressao.window.close();
+    var janelaImpressao = window.open('', '_blank');
+    var html = '<html><head><title>Impressão</title></head><body>';
+    html += '<pre>' + conteudo + '</pre>';
+    html += '</bod></html>';
+    janelaImpressao.document.open();
+    janelaImpressao.document.write(html);
+    janelaImpressao.document.close();
+    janelaImpressao.print();
   }
+
 
   function funcao_adicionar(){
 
@@ -194,7 +202,7 @@
 
     quantidadeformas = quantidade * fator;
     programacao = $('#programadia').val();
-    programacao += `QUANTIDADE ITEMS:${quantidade}\nPESO: ${peso}G\nSABOR: ${sabor}\nFORMAS: ${tipoForma}\nQUANTIDADE DE FORMAS: ${quantidadeformas.toFixed(2)} \n ----------------//------------------`;
+    programacao += `QUANTIDADE ITEMS:${quantidade}\nPESO: ${peso}G\nSABOR: ${sabor}\nFORMAS: ${tipoForma}\nQUANTIDADE DE FORMAS: ${quantidadeformas.toFixed(2)} \n ---------------------------//-----------------------------\n`;
     
     $('#programadia').val(programacao);
 

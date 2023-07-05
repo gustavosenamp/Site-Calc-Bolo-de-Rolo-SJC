@@ -80,4 +80,14 @@
       background-color: #2fcacf;
     }
 
-    
+    #programadia{
+      font-family: Arial, sans-serif;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    }
+
+   
