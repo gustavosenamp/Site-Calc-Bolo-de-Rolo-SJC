@@ -45,6 +45,10 @@
 
     <div class="container">
       <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div id="teste">
+      
+      </div>
+
       <div class="jumbotron">
         <div class="container">
           <div class="row">
@@ -139,6 +143,7 @@
           <a href="#" id="adidionar" class="btn btn-primary" onclick="funcao_adicionar()"><i class="fa fa-calculator"></i> calcular</a>
           <a href="#" id="remover" class="btn btn-danger" onclick="limpar()"><i class="fa fa-trash"></i> limpar</a>
           <a id="imprimir" class="btn btn-warning" onclick="imprimir()"><i class="fa fa-print"></i> imprimir</a>
+          <a id="teste" class="btn btn-warning" onclick="criartabela()"><i class="fa fa-print"></i>tabela</a>
         </div>
       </div>
       <div class="row"> 
@@ -176,6 +181,19 @@
 <script type="text/javascript">
   function limpar(){
     $('#programadia').val('');
+  }
+
+  function criartabela(){
+
+    $('#teste').html('<table><tr><th>Company</th><th>Contact</th><th>Country</th></tr>'+ criarlinha() +' </table>');
+
+  }
+
+  function criarlinha(){
+
+    //return '';
+    return '<tr><td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Germany</td></tr><tr><td>Centro comercial Moctezuma</td><td>Francisco Chang</td><td>Mexico</td></tr>'
+
   }
 
   function imprimir(){
