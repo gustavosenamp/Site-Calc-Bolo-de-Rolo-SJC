@@ -88,6 +88,28 @@
       line-height: 1.5;
       margin-bottom: 10px;
     }
+    
+ 
+    /* Tabela */
+    #Tabela500, #Tabela350,
+    #Tabela250, #Tabela70, #TabelaFinal {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      background-color: #ffffff;
+      margin-bottom: 5px;
     }
-
-   
+  
+    .L, .LF, .td, .tdf {
+      border: 1px solid #000000;
+      padding: 8px;
+    }
+  
+    .L:nth-child(1), .td:nth-child(1), .tdF:nth-child(1), .tdF:nth-child(2), .tdF:nth-child(3), .tdF:nth-child(4),
+    .L:nth-child(3), .td:nth-child(3), .LF:nth-child(1), .LF:nth-child(2), .LF:nth-child(3), .LF:nth-child(4) {
+      width: 100px; /* Largura fixa para a primeira e terceira colunas */
+    }
+  
+    .L:nth-child(2), .td:nth-child(2), .LF:nth-child(5), .LF:nth-child(6), .LF:nth-child(7), .tdf:nth-child(5), .tdf:nth-child(6), .tdf:nth-child(7) {
+      width: 200px; /* Largura fixa para a segunda coluna (maior) */
+    }

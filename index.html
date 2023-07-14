@@ -14,7 +14,8 @@
   <meta name="msapplication-TileImage" content="https://files.menudino.com/cardapios/35939/pwa/logo192.png">
   <meta property="og:title" content="Bolo de Rolo Sjc - S&#227;o Jos&#233; dos Campos" />
   <meta property="og:type" content="restaurant" />
-  <meta property="og:description" content="Confeitaria Bolo de Rolo Sjc S&#227;o Jos&#233; dos Campos. Fa&#231;a Pedidos e acesse o Card&#225;pio do MenuDino On-line.  Bolo de Rolo Sjc est&#225; localizada na cidade S&#227;o Jos&#233; dos Campos, no bairro Residencial Jatob&#225;." />
+  <meta property="og:description"
+    content="Confeitaria Bolo de Rolo Sjc S&#227;o Jos&#233; dos Campos. Fa&#231;a Pedidos e acesse o Card&#225;pio do MenuDino On-line.  Bolo de Rolo Sjc est&#225; localizada na cidade S&#227;o Jos&#233; dos Campos, no bairro Residencial Jatob&#225;." />
   <link rel="canonical" href="https://boloderolosjc.com.br" />
   <meta property="og:url" content="https://boloderolosjc.com.br" />
   <meta property="og:image" itemprop="image" content="https://files.menudino.com/cardapios/35939/logo.png" />
@@ -34,7 +35,7 @@
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
- 
+
 </head>
 
 <script src="jquery-3.7.0.min.js"></script>
@@ -45,10 +46,6 @@
 
     <div class="container">
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div id="teste">
-      
-      </div>
-
       <div class="jumbotron">
         <div class="container">
           <div class="row">
@@ -71,7 +68,7 @@
       </div>
 
       <!-- Example row of columns -->
-      <div class="row"> 
+      <div class="row">
         <div class="col-md-4">
           &nbsp;
         </div>
@@ -82,21 +79,21 @@
         <div class="col-md-4">
           &nbsp;
         </div>
-        <div class="row"> 
+        <div class="row">
           <div class="col-md-4">
             &nbsp;
           </div>
         </div>
 
       </div>
-      <div class="row"> 
+      <div class="row">
         <div class="col-md-3">
-          <label for="qtdItem">Quantidade</label>
-          <input type="number" id="quantidade" class="form-control">
+          <label for="quantidade">Quantidade</label>
+          <input type="number" id="quantidade" min="0" class="form-control">
         </div>
         <div class="col-md-3">
           <label for="peso">Peso</label>
-          <select id="peso"  class="form-control">
+          <select id="peso" class="form-control">
             <option value="70">70g</option>
             <option value="250">250g</option>
             <option value="350">350g</option>
@@ -119,7 +116,7 @@
         </div>
         <div class="col-md-3">
           <label for="sabor">Sabor</label>
-          <select id="sabor" class="form-control" >
+          <select id="sabor" class="form-control">
             <option value="Goiabada">Goiabada</option>
             <option value="Doce de Leite">Doce de Leite</option>
             <option value="Chocolate">Chocolate</option>
@@ -132,34 +129,76 @@
           </select>
         </div>
       </div>
-      <div class="row"> 
+      <div class="row">
         <div class="col-md-4">
           &nbsp;
         </div>
       </div>
 
-      <div class="row"> 
+      <div class="row">
         <div class="col-md-12 text-rigth">
-          <a href="#" id="adidionar" class="btn btn-primary" onclick="funcao_adicionar()"><i class="fa fa-calculator"></i> calcular</a>
+          <a id="adidionar" class="btn btn-primary" onclick="adicionarLinha()"><i class="fa fa-calculator"></i> calcular</a>
+          <a id="total" class="btn btn-warning" onclick="calcTotal()"><i class="fa fa-print"></i> total</a>
           <a href="#" id="remover" class="btn btn-danger" onclick="limpar()"><i class="fa fa-trash"></i> limpar</a>
           <a id="imprimir" class="btn btn-warning" onclick="imprimir()"><i class="fa fa-print"></i> imprimir</a>
-          <a id="teste" class="btn btn-warning" onclick="criartabela()"><i class="fa fa-print"></i>tabela</a>
         </div>
       </div>
-      <div class="row"> 
+      <div class="row">
         <div class="col-md-4">
           &nbsp;
         </div>
       </div>
 
-      <div class="row" id="impressao"> 
+      <div class="row" id="impressao">
         <div class="col-md-12">
           <label for="programadia">Programação do dia</label>
-          <textarea id="programadia" class="form-control" rows="10"></textarea>
         </div>
+      </div>
+
+      <div id="tabelaContainer">
+        <table id="Tabela500">
+          <tr class="C">
+            <th class="L">Quantidade</th>
+            <th class="L">500g</th>
+            <th class="L">FG</th>
+          </tr>
+        </table>
+        <table id="Tabela350">
+          <tr class="C">
+            <th class="L">Quantidade</th>
+            <th class="L">350g</th>
+            <th class="L">FG</th>
+          </tr>
+        </table>
+        <table id="Tabela250">
+          <tr class="C"> 
+            <th class="L">Quantidade</th>
+            <th class="L">250g</th>
+            <th class="L">FP</th>
+          </tr>
+        </table>
+        <table id="Tabela70">
+          <tr class="C">
+            <th class="L">Quantidade</th>
+            <th class="L">70g</th>
+            <th class="L">FP</th>
+          </tr>
+        </table>
+        <table id="TabelaFinal">
+          <tr class="CF">
+            <th class="LF">FG</th>
+            <th class="LF">FP</th>
+            <th class="LF">FR23</th>
+            <th class="LF">FR25</th>
+            <th class="LF">Total de Formas</th>
+            <th class="LF">Total de Bolos</th>
+            <th class="LF">Total de Massa</th>
+          </tr>
+        </table>
       </div>
 
     </div> <!-- /container -->
+
   </main>
 
   <footer class="footer" style="font-size: 14pt; color: #ffffff; font-weight: bold;">
@@ -178,120 +217,5 @@
     </p>
   </footer>
 </body>
-<script type="text/javascript">
-  function limpar(){
-    $('#programadia').val('');
-  }
-
-  function criartabela(){
-
-    $('#teste').html('<table><tr><th>Company</th><th>Contact</th><th>Country</th></tr>'+ criarlinha() +' </table>');
-
-  }
-
-  function criarlinha(){
-
-    //return '';
-    return '<tr><td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Germany</td></tr><tr><td>Centro comercial Moctezuma</td><td>Francisco Chang</td><td>Mexico</td></tr>'
-
-  }
-
-  function imprimir(){
-    var conteudo = $('#programadia').val();
-    var janelaImpressao = window.open('', '_blank');
-    var html = '<html><head><title>Impressão</title></head><body>';
-    html += '<pre>' + conteudo + '</pre>';
-    html += '</bod></html>';
-    janelaImpressao.document.open();
-    janelaImpressao.document.write(html);
-    janelaImpressao.document.close();
-    janelaImpressao.print();
-  }
-
-
-  function funcao_adicionar(){
-
-    var quantidade = $('#quantidade').val();
-    var peso = $('#peso').val();
-    var tipoForma = $('#tipoForma').val();
-    var sabor = $('#sabor').val();
-    var fator = fatorForma(peso);
-    var programacao = "";
-
-    quantidadeformas = quantidade * fator;
-    programacao = $('#programadia').val();
-    programacao += `QUANTIDADE ITEMS:${quantidade}\nPESO: ${peso}G\nSABOR: ${sabor}\nFORMAS: ${tipoForma}\nQUANTIDADE DE FORMAS: ${quantidadeformas.toFixed(2)} \n ---------------------------//-----------------------------\n`;
-    
-    $('#programadia').val(programacao);
-
-  }
-
-  function fatorForma(peso){
-    var fator = 0.0;
-    switch (peso) {
-      case "3000":
-        fator = 18.0;
-        break;
-      case "2500":
-        fator = 24.0;
-        break;
-      case "1500":
-        fator = 22.0;
-        break;
-      case "1000":
-        fator = 14.0;
-        break;
-      case "650":
-        fator = 7.0;
-        break;
-      case "500":
-        fator = 2.0;
-        break;
-      case '350':
-        fator = 1.33;
-        break;
-      case '250':
-        fator = 2.0;
-        break;
-      case '70':
-        fator = 0.5;
-        break;
-    }
-    return fator;
-  }
-
-  var pesoSelect = document.getElementById("peso");
-  var formaSelect = document.getElementById("tipoForma");
-
-  pesoSelect.addEventListener("change", function() {
-    var selectedPeso = pesoSelect.value;
-    if (selectedPeso === "3000") {
-      formaSelect.value = "FR27";
-      formaSelect.disabled = true;
-    } else if (selectedPeso === "2500") {
-      formaSelect.value = "FR27";
-      formaSelect.disabled = true;
-    } else if (selectedPeso === "1500") {
-      formaSelect.value = "FR23";
-      formaSelect.disabled = true;
-    } else if (selectedPeso === "1000") {
-      formaSelect.value = "FR23";
-      formaSelect.disabled = true;
-    }else if (selectedPeso === "650") {
-      formaSelect.value = "FP";
-      formaSelect.disabled = true;
-    }else if (selectedPeso === "500") {
-      formaSelect.value = "FG";
-      formaSelect.disabled = true;
-    }else if (selectedPeso === "350") {
-      formaSelect.value = "FG";
-      formaSelect.disabled = true;
-    }else{
-      formaSelect.disabled = false;
-    }
-  });
-
- 
-</script>
-
+<script type="text/javascript" src="scripts.js"></script>
 </html>
