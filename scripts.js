@@ -2,6 +2,10 @@ function limpar() {
     $("table tbody").each(function() {
         $(this).find("tr:not(:first)").remove();
       });
+    TotalB = 0;
+    TotalM = 0;
+    FormasTotalFG = 0;
+    FormasTotalFP = 0;
   }
 
 FormasTotalFG = 0;
@@ -51,28 +55,29 @@ function adicionarLinha() {
   }
 
   function calcTotal(){
-    Total = FormasTotalFG + FormasTotalFP;
+    TotalF = FormasTotalFG + FormasTotalFP;
+    TotalB = FormasTotalFP / 4 + FormasTotalFG / 2;
+    TotalM = Math.ceil(TotalB/4);
     var tabela = $("#TabelaFinal");
     var newRow = $("<tr></tr>");
       var cell1 = $("<td class='tdf'></td>").text(FormasTotalFG);
       var cell2 = $("<td class='tdf'></td>").text(FormasTotalFP);
       var cell3 = $("<td class='tdf'></td>").text("");
       var cell4 = $("<td class='tdf'></td>").text("");
-      var cell5 = $("<td class='tdf'></td>").text(Total);
-      var cell6 = $("<td class='tdf'></td>").text("");
-      var cell7 = $("<td class='tdf'></td>").text("");
+      var cell5 = $("<td class='tdf'></td>").text(TotalB);
+      var cell6 = $("<td class='tdf'></td>").text(TotalM);
 
-      newRow.append(cell1, cell2, cell3, cell4, cell5, cell6, cell7);
+      newRow.append(cell1, cell2, cell3, cell4, cell5, cell6);
       tabela.append(newRow);
 
   }
 
   function imprimir(){
-    var tabela = document.getElementById("tabelaContainer");
+    var tabela = document.getElementById("tabelaContainer").innerHTML;
     var janelaImprimir = window.open('', '', 'width=800,height=600');
     janelaImprimir.document.write('<html><head><title>Imprimir Tabela</title></head><body>');
-    janelaImprimir.document.write('<style>@media print { table { page-break-inside: avoid; } }</style>');
-    janelaImprimir.document.write('<table>' + tabela.innerHTML + '</table>');
+    janelaImprimir.document.write('<style>@media print { table { width: 100%; border-collapse: collapse; table-layout: fixed; background-color: #ffffff; margin-bottom: 5px;} .L, .LF, .td, .tdf { border: 1px solid #000000; padding: 8px; } }</style>');
+    janelaImprimir.document.write(tabela);
     janelaImprimir.document.write('</body></html>');
     janelaImprimir.document.close();
     janelaImprimir.print();

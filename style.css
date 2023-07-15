@@ -1,115 +1,145 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
 
-    .jumbotron {
-      background-image: url("/imgs/capaboloderolosjc.jpg");
-      background-size: 100%;
-      border: #000000 solid 1.5px;
-    }
+.jumbotron {
+  background-image: url("/imgs/capaboloderolosjc.jpg");
+  background-size: 100%;
+  border: #000000 solid 1.5px;
+}
 
-    .col-md-6 {
-      padding-bottom: 20px;
-    }
+.col-md-6 {
+  padding-bottom: 20px;
+}
 
-    .my-custom-img {
-      width: 15%;
-    }
+.my-custom-img {
+  width: 15%;
+}
 
-    h1,
-    h3,
-    h6 {
-      text-shadow: 1px 1px 0 #000000,
-        -1px 1px 0 #000000,
-        1px -1px 0 #000000,
-        -1px -1px 0 #000000;
-    }
+h1,
+h3,
+h6 {
+  text-shadow: 1px 1px 0 #000000,
+    -1px 1px 0 #000000,
+    1px -1px 0 #000000,
+    -1px -1px 0 #000000;
+}
 
-    h6 {
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      font-size: 13pt;
-    }
+h6 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 13pt;
+}
 
-    .card-img-top {
-      width: 25%;
-      display: block;
-      margin: auto;
-      padding-top: 20px;
+.card-img-top {
+  width: 25%;
+  display: block;
+  margin: auto;
+  padding-top: 20px;
 
-    }
+}
 
-    .card {
-      background-color: white;
-      border: #000000 solid 1.5px;
-      height: 95%;
-    }
+.card {
+  background-color: white;
+  border: #000000 solid 1.5px;
+  height: 95%;
+}
 
-    body {
-      background-image: radial-gradient(circle at 50% 50%, #fde780 0, #edce76 25%, #d8b46c 50%, #c19b62 75%, #ac865a 100%);
+body {
+  background-image: radial-gradient(circle at 50% 50%, #fde780 0, #edce76 25%, #d8b46c 50%, #c19b62 75%, #ac865a 100%);
 
-    }
+}
 
-    h5 {
-      text-align: center;
-      font-size: 12pt;
-    }
+h5 {
+  text-align: center;
+  font-size: 12pt;
+}
 
-    .footer .footer-icons {
-      display: flex;
-      justify-content: center;
-    }
+.footer .footer-icons {
+  display: flex;
+  justify-content: center;
+}
 
-    .footer .footer-icons a {
-      display: inline-block;
-      width: 35px;
-      height: 35px;
-      cursor: pointer;
-      background-color: #33383b;
-      border-radius: 50px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 20px;
-      color: #ffffff;
-      text-align: center;
-      line-height: 35px;
-      margin-bottom: 5px;
-      transition: 0.3s;
+.footer .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-bottom: 5px;
+  transition: 0.3s;
 
-    }
+}
 
-    .footer .footer-icons a:hover {
-      background-color: #2fcacf;
-    }
+.footer .footer-icons a:hover {
+  background-color: #2fcacf;
+}
 
-    #programadia{
-      font-family: Arial, sans-serif;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      font-size: 18px;
-      line-height: 1.5;
-      margin-bottom: 10px;
-    }
-    
- 
-    /* Tabela */
-    #Tabela500, #Tabela350,
-    #Tabela250, #Tabela70, #TabelaFinal {
-      width: 100%;
-      border-collapse: collapse;
-      table-layout: fixed;
-      background-color: #ffffff;
-      margin-bottom: 5px;
-    }
-  
-    .L, .LF, .td, .tdf {
-      border: 1px solid #000000;
-      padding: 8px;
-    }
-  
-    .L:nth-child(1), .td:nth-child(1), .tdF:nth-child(1), .tdF:nth-child(2), .tdF:nth-child(3), .tdF:nth-child(4),
-    .L:nth-child(3), .td:nth-child(3), .LF:nth-child(1), .LF:nth-child(2), .LF:nth-child(3), .LF:nth-child(4) {
-      width: 100px; /* Largura fixa para a primeira e terceira colunas */
-    }
-  
-    .L:nth-child(2), .td:nth-child(2), .LF:nth-child(5), .LF:nth-child(6), .LF:nth-child(7), .tdf:nth-child(5), .tdf:nth-child(6), .tdf:nth-child(7) {
-      width: 200px; /* Largura fixa para a segunda coluna (maior) */
-    }
+#programadia {
+  font-family: Arial, sans-serif;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+
+/* Tabela */
+#Tabela500,
+#Tabela350,
+#Tabela250,
+#Tabela70,
+#TabelaFinal {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.L,
+.LF,
+.td,
+.tdf {
+  border: 1px solid #000000;
+  padding: 8px;
+}
+
+.L:nth-child(1),
+.L:nth-child(3),
+.td:nth-child(1),
+.td:nth-child(3) {
+  width: 100px;
+  /* Largura fixa para a primeira e terceira colunas */
+}
+
+.L:nth-child(2),
+.td:nth-child(2) {
+  width: 200px;
+  /* Largura fixa para a segunda coluna (maior) */
+}
+
+@media print {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background-color: #ffffff;
+    margin-bottom: 5px;
+  }
+
+  .L,
+  .LF,
+  .td,
+  .tdf {
+    border: 1px solid #000000;
+    padding: 8px;
+  }
+
+}
