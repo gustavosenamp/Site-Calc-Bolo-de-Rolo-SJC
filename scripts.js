@@ -44,14 +44,26 @@ function adicionarLinha() {
 
     if (tabela) {
       var newRow = $("<tr></tr>");
-      var cell1 = $("<td class='td'></td>").text(quantidade);
-      var cell2 = $("<td class='td'></td>").text(sabor);
-      var cell3 = $("<td class='td'></td>").text(numeroArredondado);
-
+      var cell1 = $("<td class='td'></td>").append(`<input type='text' id='borda' class='edit' value='${quantidade}' readonly>`);
+      var cell2 = $("<td class='td'></td>").append(`<input type='text' id='borda' class='edit' value='${sabor}' readonly>`);
+      var cell3 = $("<td class='td'></td>").append(`<input type='text' id='borda' class='edit' value='${numeroArredondado}' readonly>`);
+  
       newRow.append(cell1, cell2, cell3);
       tabela.append(newRow);
     }
+  }
 
+  function alternarEdicao() {
+    var camposInput = document.querySelectorAll('.edit');
+    const buttonEdit = document.getElementsByClassName('btn btb-danger');
+    const editChange = document.getElementById('edit');
+
+    camposInput.forEach(function (input) {
+      input.readOnly = !input.readOnly;
+    });
+
+    buttonEdit.toggleClass("btn btn-sucess");
+    editChange.toggleClass("edit2");
   }
 
   function calcTotal(){
@@ -60,12 +72,12 @@ function adicionarLinha() {
     TotalM = Math.ceil(TotalB/4);
     var tabela = $("#TabelaFinal");
     var newRow = $("<tr></tr>");
-      var cell1 = $("<td class='tdf'></td>").text(FormasTotalFG);
-      var cell2 = $("<td class='tdf'></td>").text(FormasTotalFP);
-      var cell3 = $("<td class='tdf'></td>").text("");
-      var cell4 = $("<td class='tdf'></td>").text("");
-      var cell5 = $("<td class='tdf'></td>").text(TotalB);
-      var cell6 = $("<td class='tdf'></td>").text(TotalM);
+      var cell1 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='${FormasTotalFG}' readonly>`);
+      var cell2 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='${FormasTotalFP}' readonly>`);
+      var cell3 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='' readonly>`);
+      var cell4 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='' readonly>`);
+      var cell5 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='${TotalB}' readonly>`);
+      var cell6 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='${TotalM}' readonly>`);
 
       newRow.append(cell1, cell2, cell3, cell4, cell5, cell6);
       tabela.append(newRow);

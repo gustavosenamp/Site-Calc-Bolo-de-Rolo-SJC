@@ -95,12 +95,13 @@ h5 {
 #Tabela350,
 #Tabela250,
 #Tabela70,
-#TabelaFinal {
+#TabelaFinal{
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   background-color: #ffffff;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .L,
@@ -125,9 +126,29 @@ h5 {
   /* Largura fixa para a segunda coluna (maior) */
 }
 
+.edit{
+  width: 100%;
+  border: none;
+  table-layout: fixed;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.edit2{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+
+
 @media print {
   table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
     table-layout: fixed;
     background-color: #ffffff;
