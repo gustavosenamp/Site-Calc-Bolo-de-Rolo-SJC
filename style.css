@@ -131,19 +131,16 @@ h5 {
   border: none;
   table-layout: fixed;
   background-color: #ffffff;
-  margin-bottom: 5px;
   text-align: center;
 }
 
 .edit2{
   width: 100%;
-  border-collapse: collapse;
+  border: 1px solid black;
   table-layout: fixed;
   background-color: #ffffff;
-  margin-bottom: 5px;
   text-align: center;
 }
-
 
 
 @media print {
@@ -164,3 +161,4 @@ h5 {
   }
 
 }
+

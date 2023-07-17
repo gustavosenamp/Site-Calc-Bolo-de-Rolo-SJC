@@ -6,10 +6,19 @@ function limpar() {
     TotalM = 0;
     FormasTotalFG = 0;
     FormasTotalFP = 0;
+
+    if ($('#btnEditar').hasClass("btn-success")){
+      $(this).removeClass("btn-sucess").addClass("btn-danger");
+    }else{
+      return;
+    }
   }
 
-FormasTotalFG = 0;
-FormasTotalFP = 0;
+  var FormasTotalFG = 0;
+  var FormasTotalFP = 0;
+  var TotalB = 0;
+  var TotalM = 0;
+  
 
 function adicionarLinha() {
     var peso = $('#peso').val();
@@ -44,51 +53,70 @@ function adicionarLinha() {
 
     if (tabela) {
       var newRow = $("<tr></tr>");
-      var cell1 = $("<td class='td'></td>").append(`<input type='text' id='borda' class='edit' value='${quantidade}' readonly>`);
-      var cell2 = $("<td class='td'></td>").append(`<input type='text' id='borda' class='edit' value='${sabor}' readonly>`);
-      var cell3 = $("<td class='td'></td>").append(`<input type='text' id='borda' class='edit' value='${numeroArredondado}' readonly>`);
+      var cell1 = $("<td class='td'></td>").append(`<input type='text' class='edit' value='${quantidade}' onchange="atualizarTerceiraColuna(this)" readonly>`);
+      var cell2 = $("<td class='td'></td>").append(`<input type='text' class='edit' value='${sabor}' readonly>`);
+      var cell3 = $("<td class='td'></td>").text(`${numeroArredondado}`);
   
       newRow.append(cell1, cell2, cell3);
       tabela.append(newRow);
     }
+
   }
+
+  function atualizarTerceiraColuna(input) {
+    var quantidade = $(input).val();
+    var fator = fatorForma($('#peso').val());
+    var numeroArredondado = Math.ceil(quantidade * fator);
+    $(input).closest('tr').find('td:nth-child(3)').text(numeroArredondado);
+
+  }
+
+  $(document).on("input", "#TabelaFinal input", function () {
+  });
 
   function alternarEdicao() {
     var camposInput = document.querySelectorAll('.edit');
-    const buttonEdit = document.getElementsByClassName('btn btb-danger');
-    const editChange = document.getElementById('edit');
+    const buttonEdit = $('#btnEditar');
 
     camposInput.forEach(function (input) {
       input.readOnly = !input.readOnly;
     });
 
-    buttonEdit.toggleClass("btn btn-sucess");
-    editChange.toggleClass("edit2");
+    buttonEdit.toggleClass("btn-danger btn-success");
   }
 
-  function calcTotal(){
+  function calcTotal() {
     TotalF = FormasTotalFG + FormasTotalFP;
     TotalB = FormasTotalFP / 4 + FormasTotalFG / 2;
-    TotalM = Math.ceil(TotalB/4);
+    TotalM = Math.ceil(TotalB / 4);
+  
     var tabela = $("#TabelaFinal");
+    
+    // Verifica se existem linhas de dados na tabela (além do título)
+    if (tabela.find("tr").length > 1) {
+      tabela.find("tr:gt(0)").remove(); // Remove todas as linhas de dados, exceto o título
+    }
+  
     var newRow = $("<tr></tr>");
-      var cell1 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='${FormasTotalFG}' readonly>`);
-      var cell2 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='${FormasTotalFP}' readonly>`);
-      var cell3 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='' readonly>`);
-      var cell4 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='' readonly>`);
-      var cell5 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='${TotalB}' readonly>`);
-      var cell6 = $("<td class='tdf'></td>").append(`<input type='text' class='edit' value='${TotalM}' readonly>`);
-
-      newRow.append(cell1, cell2, cell3, cell4, cell5, cell6);
-      tabela.append(newRow);
-
+    var cell1 = $("<td class='tdf'></td>").text(`${FormasTotalFG}`);
+    var cell2 = $("<td class='tdf'></td>").text(`${FormasTotalFP}`);
+    var cell3 = $("<td class='tdf'></td>").text('');
+    var cell4 = $("<td class='tdf'></td>").text('');
+    var cell5 = $("<td class='tdf'></td>").text(`${TotalB}`);
+    var cell6 = $("<td class='tdf'></td>").text(`${TotalM}`);
+  
+    newRow.append(cell1, cell2, cell3, cell4, cell5, cell6);
+    tabela.append(newRow);
+    
   }
+
+  
 
   function imprimir(){
     var tabela = document.getElementById("tabelaContainer").innerHTML;
     var janelaImprimir = window.open('', '', 'width=800,height=600');
     janelaImprimir.document.write('<html><head><title>Imprimir Tabela</title></head><body>');
-    janelaImprimir.document.write('<style>@media print { table { width: 100%; border-collapse: collapse; table-layout: fixed; background-color: #ffffff; margin-bottom: 5px;} .L, .LF, .td, .tdf { border: 1px solid #000000; padding: 8px; } }</style>');
+    janelaImprimir.document.write('<style>@media print { table { display: flex; justify-content: center; align-items: center; width: 90%; border-collapse: collapse; table-layout: fixed; background-color: #ffffff; margin-bottom: 5px; font-size: 14px; } .L, .LF, .td, .tdf { border: 1px solid #000000; padding: 8px; font-size: 10px; } .edit { width: 100%; border: none; table-layout: fixed; background-color: #ffffff; text-align: center; font-size: 10px; } .L:nth-child(2), .td:nth-child(2) { width: 200px; } } </style>');
     janelaImprimir.document.write(tabela);
     janelaImprimir.document.write('</body></html>');
     janelaImprimir.document.close();

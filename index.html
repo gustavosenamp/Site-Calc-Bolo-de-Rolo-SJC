@@ -137,11 +137,12 @@
 
       <div class="row">
         <div class="col-md-12 text-rigth">
-          <a id="adidionar" class="btn btn-primary" onclick="adicionarLinha()"><i class="fa fa-calculator"></i> calcular</a>
-          <a id="total" class="btn btn-warning" onclick="calcTotal()"><i class="fa fa-print"></i> total</a>
-          <a href="#" id="remover" class="btn btn-danger" onclick="limpar()"><i class="fa fa-trash"></i> limpar</a>
-          <a id="imprimir" class="btn btn-warning" onclick="imprimir()"><i class="fa fa-print"></i> imprimir</a>
-          <a id="btnEditar" class="btn btn-danger" onclick="alternarEdicao()"><i class="fa fa-print"></i> editar</a>
+          <a id="adidionar" class="btn btn-primary" onclick="adicionarLinha()"><i class="bi bi-upload"></i> inserir</a>
+          <a id="btnEditar" class="btn btn-danger" onclick="alternarEdicao()"><i class="bi bi-pencil-fill"></i> editar</a>
+          <a id="total" class="btn btn-warning" onclick="calcTotal()"><i class="fa fa-calculator""></i> calcular</a>
+          <a href="#" id="remover" class="btn btn-dark" onclick="limpar()"><i class="fa fa-trash"></i> limpar</a>
+          <a id="imprimir" class="btn btn-info" onclick="imprimir()"><i class="fa fa-print"></i> imprimir</a>
+          
           
         </div>
       </div>
@@ -153,35 +154,35 @@
 
       <div class="row" id="impressao">
         <div class="col-md-12">
-          <label for="programadia">Programação do dia</label>
+          <label for="programadia" style="font-size: 18px; font-weight: bold;">Programação do dia</label>
         </div>
       </div>
 
       <div id="tabelaContainer">
         <table id="Tabela500">
           <tr class="C">
-            <th class="L">Quantidade</th>
+            <th class="L">Qtde</th>
             <th class="L">500g</th>
             <th class="L">FG</th>
           </tr>
         </table>
         <table id="Tabela350">
           <tr class="C">
-            <th class="L">Quantidade</th>
+            <th class="L">Qtde</th>
             <th class="L">350g</th>
             <th class="L">FG</th>
           </tr>
         </table>
         <table id="Tabela250">
           <tr class="C"> 
-            <th class="L">Quantidade</th>
+            <th class="L">Qtde</th>
             <th class="L">250g</th>
             <th class="L">FP</th>
           </tr>
         </table>
         <table id="Tabela70">
           <tr class="C">
-            <th class="L">Quantidade</th>
+            <th class="L">Qtde</th>
             <th class="L">70g</th>
             <th class="L">FP</th>
           </tr>
@@ -192,8 +193,8 @@
             <th class="LF">FP</th>
             <th class="LF">FR23</th>
             <th class="LF">FR27</th>
-            <th class="LF">Total de Bolos</th>
-            <th class="LF">Total de Massa</th>
+            <th class="LF">Total Bolos</th>
+            <th class="LF">Total Massa</th>
           </tr>
         </table>
       </div>
